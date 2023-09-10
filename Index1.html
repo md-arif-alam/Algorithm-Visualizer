@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Graph Search Visualizer</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+    integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+  <div class="top1">
+    <div id="head1">
+      <h2><b>Algorithm Visualizer</b></h2>
+    </div>
+    <!-- <div class="main-container column"> -->
+      <!--Selecting mode-->
+      <p class="radio_btn_group_div1">
+      <p style="display: inline-block; margin-right: 10px" class="sell">
+        <strong>Select Tools</strong>
+      </p>
+      <div class="custom-control-custom-radio-custom-control-inline1">
+        <input type="radio" name="select_mode" class="custom-Control-input" value="wall"
+          checked="checked" />
+        <label class="custom-control" for="select_mode">Wall</label>
+      </div>
+      <div class="custom-control-custom-radio-custom-control-inline1">
+        <input type="radio" name="select_mode" class="custom-Control-input" value="clear" />
+        <label class="custom-control" for="select_mode">Clear</label>
+      </div>
+      <div class="custom-control-custom-radio-custom-control-inline1">
+        <input type="radio"  name="select_mode" class="custom-Control-input" value="source" />
+        <label class="custom-control" for="select_mode">Source</label>
+      </div>
+      <div class="custom-control-custom-radio-custom-control-inline1">
+        <input type="radio" name="select_mode" class="custom-Control-input" value="target" />
+        <label class="custom-control" for="select_mode">Target</label>
+      </div>
+      </p>
+
+    <!-- </div> -->
+    <!-- <div class="main-container column"> -->
+      <!--Search Method Selection-->
+      <p class="radio_btn_group_div2">
+      <p style="display: inline-block;" class="sell">
+        <strong>Select Algorithm</strong>
+      </p>
+      <div class="custom-control-custom-radio-custom-control-inline">
+        <input type="radio" name="search_algo" class="custom-control-input" value="BFS"
+          checked="checked" />
+        <label class="custom-control-label" for="search_algo1">Bfs</label>
+      </div>
+      <div class="custom-control-custom-radio-custom-control-inline">
+        <input type="radio" name="search_algo" class="custom-control-input" value="DFS" />
+        <label class="custom-control-label" for="search_algo2">Dfs</label>
+      </div>
+      <div class="custom-control-custom-radio-custom-control-inline">
+        <input type="radio" name="search_algo" class="custom-control-input" value="A*" />
+        <label class="custom-control-label" for="search_algo3">A-Star</label>
+      </div>
+      </p>
+    <!-- </div> -->
+  </div>
+
+  
+  <a href="pro.html" target="_parent">
+    <button class="butonnn" id="sortalgo">Sorting-Algo</button>
+  </a>
+
+  <div class="left">
+    <div class="page-container">
+      <div class="column side setting">
+        <div id="board-size-setting">
+
+          <div class="simu">
+            <h4>Frame Speed</h4>
+          </div>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" id="simulator_speed" /><br />
+            <p>Frame Rate: <span id="speed_display"></span></p>
+          </div>
+          <div class="boar">
+            <h4>Canvas Size Setting</h4>
+          </div>
+          <div>
+            <form onsubmit="">
+              <div class="ui input">
+                <input type="number" id="width_input" class="but" type="text" placeholder="WIDTH"
+                  style=" height: 40px; width: 135px;" />
+              </div>
+              <div class="ui input">
+                <input type="number" id="height_input" class="but" type="text" placeholder="HEIGHT"
+                  style=" height: 40px; width: 135px;" />
+              </div>
+              <br />
+              <button id="apply_setting" type="submit" class="butonnn" style=" height: 30px; width: 80px;">
+                Apply
+              </button>
+            </form>
+            <div id="data-container">
+              <div class="log">
+                <h3> Detail Of Nodes </h3>
+              </div>
+              <div id="data-content"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      
+
+
+
+    </div>
+  </div>
+  <div class="page-container">
+    <h1>Path-Finding Algorithm</h1>
+    <!-- <div class="column side setting">
+      <div id="board-size-setting">
+        <h4>Board Size Setting</h4>
+        <div>
+          <form onsubmit="return false;">
+            <div class="ui input">
+              <input type="number" id="width_input" class="dimension-input" type="text" placeholder="Width" />
+            </div>
+            <div class="ui input">
+              <input type="number" id="height_input" class="dimension-input" type="text" placeholder="Height" />
+            </div>
+            <br />
+            <button id="apply_setting" type="submit" class="ui primary button" style="margin-left: 10px">
+              Apply
+            </button>
+          </form>
+        </div>
+      </div> -->
+
+    <!-- slide bar-->
+    <!-- <br /><br />
+      <h4>Simulator Speed</h4>
+      <div class="slide-container">
+        <input type="range" min="1" max="100" value="50" id="simulator_speed" /><br />
+        <p>Frame Rate: <span id="speed_display"></span></p>
+      </div>
+      <br />
+      <div id="data-container">
+        <h2>Log</h2>
+        <div id="data-content"></div>
+      </div>
+    </div> -->
+
+    <!-- <div class="main-container column">
+    
+      <p class="radio_btn_group_div">
+        <p style="display: inline-block; margin-right: 10px">
+          <strong>Selecting Mode</strong>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="select_mode1" name="select_mode" class="custom-control-input" value="wall"
+            checked="checked" />
+          <label class="custom-control-label" for="select_mode1">Wall</label>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="select_mode2" name="select_mode" class="custom-control-input" value="clear" />
+          <label class="custom-control-label" for="select_mode2">Clear</label>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="select_mode3" name="select_mode" class="custom-control-input" value="source" />
+          <label class="custom-control-label" for="select_mode3">Source</label>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="select_mode4" name="select_mode" class="custom-control-input" value="target" />
+          <label class="custom-control-label" for="select_mode4">Target</label>
+        </p>
+      </p>
+
+    </div> -->
+    <!-- <div class="main-container column"></div>
+      <div class="radio_btn_group_div">
+        <p style="display: inline-block; margin-right: 10px">
+          <strong>Selecting Mode</strong>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="search_algo1" name="search_algo" class="custom-control-input" value="BFS"
+            checked="checked" />
+          <label class="custom-control-label" for="search_algo1">BFS</label>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="search_algo2" name="search_algo" class="custom-control-input" value="DFS" />
+          <label class="custom-control-label" for="search_algo2">DFS</label>
+        </p>
+        <p class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="search_algo3" name="search_algo" class="custom-control-input" value="A*" />
+          <label class="custom-control-label" for="search_algo3">A*</label>
+        </p>
+      </div>
+    </div> -->
+    <!-- <div class="main-container column"> -->
+    <div id="control-button-group">
+        <button id="random_btn" type="submit" class="ui-primary-button" style="margin-left: 10px; margin-top: 10px">
+          Random Walls
+        </button>
+
+        <button id="clear_board" type="submit" class="ui-primary-button" style="margin-left: 10px; margin-top: 10px">
+          Clear Board
+        </button>
+        <!-- start search button -->
+        <button id="start_search" type="submit" class="ui-primary-button" style="margin-left: 10px; margin-top: 10px">
+          Start Search
+        </button>
+        <!-- step -->
+        <button id="step" type="submit" class="ui-primary-button"
+          style="margin-left: 10px; margin-top: 10px; display: none">
+          Step
+        </button>
+        <button id="animation" type="submit" class="ui-primary-button"
+          style="margin-left: 10px; margin-top: 10px; display: none">
+          Animation
+        </button>
+      </div>
+    </div>
+    <div id="board-container">
+      <div id="board"></div>
+    </div>
+    
+
+  
+  </div>
+  <!-- <div class="details1">
+    <button class="dropdown1"> <span> Detail Of Algorithm</span></button>
+    <span class="dropdown-content1">
+      <p id="algodetail1"></p>
+
+      <section>
+
+        <div id="Info_Cont11">
+
+          <h3>TIME COMPLEXITY</h3>
+
+          <div class="Complexity_Containers1" id="Time_Complexity_Types_Container1">
+
+            <div class="Pair_Definitions1">
+              <p class="Sub_Heading1">Worst case:</p>
+              <p id="Time_Worst1"></p>
+            </div>
+
+            <div class="Pair_Definitions1">
+              <p class="Sub_Heading1">Average case:</p>
+              <p id="Time_Average1"></p>
+            </div>
+
+            <div class="Pair_Definitions1">
+              <p class="Sub_Heading1">Best case:</p>
+              <p id="Time_Best1"></p>
+            </div>
+
+          </div>
+
+        </div>
+        <div id="Info_Cont22">
+
+          <h3>SPACE COMPLEXITY</h3>
+
+          <div class="Complexity_Containers1" id="Space_Complexity_Types_Container1">
+
+            <div class="Pair_Definitions1">
+              <p class="Sub_Heading1">Worst case:</p>
+              <p id="Space_Worst1"></p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </span>
+  </div>  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="module" src="main.js"></script>
+</body>
+
+
+</html>
+
+
+<!-- console.log(`generating steps`); -->

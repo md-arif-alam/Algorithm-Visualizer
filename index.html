@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm-Visaulizer</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+    integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./main.css" /> -->
+  <link rel="stylesheet" href="pro.css">
+  <!-- <link rel="stylesheet" href="./style/style.css"> -->
+  <link rel="stylesheet" href="style.css.map">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="top">
+    <div id="head">
+      <h2><b>Algorithm Visualizer</b></h2>
+    </div>
+    <div class="arr">Size of Array:<p id="size_disp"></p>
+    </div>
+    <input type="range" id="a_size" min="5" max="80" step="1" value="20" size="80px">
+    <div class="arr">Speed of Array:<p id="speed_disp"></p>
+    </div>
+    <input type="range" id="a_speed" min="0.25" max="2" step="0.25" value="1.25" size="80px">
+    <button class="buton" id="a_generate" onclick="pause()"
+      style="width: 100px; height: 100px; margin-top: 25px;">Generate New Array!</button><br>
+  </div>
+  <div class="left_side">
+
+    <div class="algos">&nbsp&nbsp&nbsp&nbsp&nbspSorting-With No Sound</div>
+
+    <button id="mhide" class="buttonn" onclick="play()">Merge</button>
+    <button id="qhide" class="buttonn" onclick="play()">Quick</button>
+    <button id="hhide" class="buttonn" onclick="play()">Heap</button>
+
+
+    <div class="sorting">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSorting-Sound Effect</div>
+
+    <button id="bhide" class="buton" onclick="play()">Bubble</button>
+    <button id="shide" class="buton" onclick="play()">Selection</button>
+    <button id="ihide" class="buton" onclick="play()">Insertion</button>
+
+
+    <div class="path">Path-Finding</div>
+    <a href="Index1.html" target="_top">
+      <button id="graphalgo" class="buton" onclick="play()">Graph algo</button></a>
+    <!-- <button class="buton">BFS</button>
+    <button class="buton">Dijkstra</button> -->
+  </div>
+
+  </div>
+  <div id="title">
+    <h2>Sorting-Algorithm</h2>
+  </div>
+
+
+  <div id="array_container"></div>
+  <canvas id="mycanvas"></canvas>
+
+  <div class="details">
+    <button class="dropdown"> <span> Detail Of Algorithm</span></button>
+    <span class="dropdown-content">
+      <p id="algodetail"></p>
+
+      <section>
+
+        <div id="Info_Cont1">
+
+          <h3>TIME COMPLEXITY</h3>
+
+          <div class="Complexity_Containers" id="Time_Complexity_Types_Container">
+
+            <div class="Pair_Definitions">
+              <p class="Sub_Heading">Worst case:</p>
+              <p id="Time_Worst"></p>
+            </div>
+
+            <div class="Pair_Definitions">
+              <p class="Sub_Heading">Average case:</p>
+              <p id="Time_Average"></p>
+            </div>
+
+            <div class="Pair_Definitions">
+              <p class="Sub_Heading">Best case:</p>
+              <p id="Time_Best"></p>
+            </div>
+
+          </div>
+
+        </div>
+        <div id="m_img"><img src="mergesort.png" id="mergeimg" alt="1"></div>
+        <div id="h_img"><img src="heapsort.png" id="heapimg" alt="2"></div>
+        <div id="q_img"><img src="quickimg.png" id="quickimg" alt="3"></div>
+        <div id="b_img"><img src="bubble.png" id="bubbleimg" alt="4"></div>
+        <div id="s_img"><img src="select.png" id="selectionimg" alt="5"></div>
+        <div id="i_img"><img src="insert.png" id="insertionimg" alt="6"></div>
+        <div id="Info_Cont2">
+
+          <h3>SPACE COMPLEXITY</h3>
+
+          <div class="Complexity_Containers" id="Space_Complexity_Container">
+
+            <div class="Pair_Definitions">
+              <p class="Sub_Heading">Worst case:</p>
+              <p id="Space_Worst"></p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </span>
+  </div>
+  <script src="math.js"></script>
+  <script src="column.js"></script>
+  <script src="vis.js"></script>
+  <script src="heap.js"></script>
+  <script src="merge.js"></script>
+  <script src="quick.js"></script>
+  <script src="./proI/quick.js"></script>
+  <script src="./proI/heap.js"></script>
+  
+
+</body>
+
+</html>
